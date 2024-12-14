@@ -87,15 +87,15 @@ jobs:
           inlineScript: |
             az account show
       
-      - name: Create Azure Web App 
+      - name: Create Azure Web App
         uses: azure/cli@v2
         with:
           azcliversion: latest
           inlineScript: |
-            az appservice plan create --name webappsvcplanmahesh --resource-group Intellipaat --is-linux --sku FREE
+            az appservice plan create --name webappsvcplanmahesh --resource-group Intellipaat --is-linux --sku B1
             az webapp create --name maheshwebapp13210 --resource-group Intellipaat --plan webappsvcplanmahesh --runtime "PYTHON:3.12"
             az webapp show --name maheshwebapp13210 --resource-group Intellipaat
-            az webapp config set --resource-group Intellipaat --name maheshwebapp13210 --startup-file "python3 app.py"
+            az webapp config set --resource-group Intellipaat --name maheshwebapp13210
 
 
       - name: Download artifact from build job

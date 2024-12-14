@@ -56,4 +56,4 @@ def api_id():
     # Python dictionaries to the JSON format.
     return jsonify(results)
 
-app.run(debug=True, port=5000)
+app.run()
