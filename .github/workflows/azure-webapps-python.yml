@@ -95,6 +95,7 @@ jobs:
             az appservice plan create --name webappsvcplanmahesh --resource-group Intellipaat --is-linux --sku FREE
             az webapp create --name maheshwebapp13210 --resource-group Intellipaat --plan webappsvcplanmahesh --runtime "PYTHON:3.12"
             az webapp show --name maheshwebapp13210 --resource-group Intellipaat
+            az webapp config set --resource-group Intellipaat --name maheshwebapp13210 --startup-file "python3 app.py"
 
 
       - name: Download artifact from build job
