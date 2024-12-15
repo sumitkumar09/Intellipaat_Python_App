@@ -16,4 +16,4 @@ spec:
         - name: intellipaatpythonapp 
           image: flaskappacr1.azurecr.io/intellipaatpythonapp
           ports:
-          - containerPort: 80
+          - containerPort: 5000
