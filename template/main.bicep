@@ -4,7 +4,7 @@ param appServiceAppName string
 
 param environmentType string
 
-var appServicePlanName = 'maheshproductlaunch-plan'
+var appServicePlanName = 'maheshproductlaunchplan'
 var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'
 var appServicePlanSkuName = (environmentType == 'prod') ? 'P2v3' : 'F1'
 
