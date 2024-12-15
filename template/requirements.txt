@@ -1,6 +1,0 @@
-# List of required python packages in venv
-Flask==2.2.2
-gunicorn
-Werkzeug==2.2.2
-bandit
-azure-cli
