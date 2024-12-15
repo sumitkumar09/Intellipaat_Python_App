@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: intellipaatpythonapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: intellipaatpythonapp
+  template:
+    metadata:
+      labels:
+        app: intellipaatpythonapp 
+    spec:
+      containers:
+        - name: intellipaatpythonapp 
+          image: flaskappacr1.azurecr.io/intellipaatpythonapp
+          ports:
+          - containerPort: 80
