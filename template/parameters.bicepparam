@@ -1,9 +1,9 @@
 using './main.bicep'
 
 
-param location = 'eastus'
-param storageAccountName = 'maheshstorIntellipaat'
-param appServiceAppName = 'maheshappsIntellipaat'
+param location = 'centralus'
+param storageAccountName = 'maheshstorintellipaat'
+param appServiceAppName = 'maheshappsintellipaat'
 
 @allowed([
   'nonprod'
