@@ -14,7 +14,7 @@ pool:
 parameters:
 - name: azureServiceConnection
   type: string
-  default: '1ceaf434-2986-4ab6-86c7-20fa012fef90'
+  default: 'Visual Studio Enterprise Subscription (1ceaf434-2986-4ab6-86c7-20fa012fef90)'
 
 variables:
   vmImageName: 'ubuntu-latest'
