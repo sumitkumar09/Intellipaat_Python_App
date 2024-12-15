@@ -45,6 +45,10 @@ stages:
 
     - upload: manifests
       artifact: manifests
+    - task: WhiteSource@21
+      inputs:
+        cwd: '$(System.DefaultWorkingDirectory)'
+        projectName: 'Intellipaat'
 
 - stage: Deploy
   displayName: Deploy stage
