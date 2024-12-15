@@ -6,19 +6,33 @@
 trigger:
 - master
 
+name: Deploy Bicep files
+
 pool:
   vmImage: ubuntu-latest
+
+parameters:
+- name: azureServiceConnection
+  type: string
+  default: '1ceaf434-2986-4ab6-86c7-20fa012fef90'
+
+variables:
+  vmImageName: 'ubuntu-latest'
+  resourceGroupName: 'Intellipaat'
+  location: 'eastus'
+  templateFile: './main.bicep'
+  csmParametersFile: './parameters.bicepparam'
 
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Visual Studio Enterprise Subscription (1ceaf434-2986-4ab6-86c7-20fa012fef90)'
-    subscriptionId: '1ceaf434-2986-4ab6-86c7-20fa012fef90'
+    azureSubscription: '${{ parameters.azureServiceConnection }}'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'Intellipaat'
-    location: 'East US'
+    resourceGroupName: '$(resourceGroupName)'
+    location: '$(location)'
     templateLocation: 'Linked artifact'
-    csmFile: 'main.bicep'
-    csmParametersFile: 'parameters.bicepparam'
+    csmFile: '$(templateFile)'
+    csmParametersFile: '$(csmParametersFile)'
     deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
