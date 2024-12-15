@@ -20,8 +20,8 @@ variables:
   vmImageName: 'ubuntu-latest'
   resourceGroupName: 'Intellipaat'
   location: 'eastus'
-  templateFile: './main.bicep'
-  csmParametersFile: './parameters.bicepparam'
+  templateFile: 'template/main.bicep'
+  csmParametersFile: 'template/parameters.bicepparam'
 
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
