@@ -4,10 +4,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-variables:
-- name: Azure_Service_Connection
-  value: '1ceaf434-2986-4ab6-86c7-20fa012fef90'
-
 stages:
 - stage: Plan
   displayName: 'Terraform Plan'
@@ -21,7 +17,7 @@ stages:
         azureSubscription: 'Visual Studio Enterprise Subscription (1ceaf434-2986-4ab6-86c7-20fa012fef90)'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
-        inlineScript: 'az login --service-principal $(Azure_Service_Connection)'
+        inlineScript: 'az login'
 
     - task: TerraformInstaller@0
       inputs:
