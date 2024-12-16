@@ -24,3 +24,15 @@ steps:
     backendAzureRmStorageAccountName: 'genai7633865272'
     backendAzureRmContainerName: 'insights-logs-auditevent'
     backendAzureRmKey: 'terraform.tfstate'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription (1ceaf434-2986-4ab6-86c7-20fa012fef90)'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription (1ceaf434-2986-4ab6-86c7-20fa012fef90)'
