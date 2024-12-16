@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendAzureRmUseEntraIdForAuthentication: true
+    backendServiceArm: 'Visual Studio Enterprise Subscription (1ceaf434-2986-4ab6-86c7-20fa012fef90)'
+    backendAzureRmResourceGroupName: 'Intellipaat'
+    backendAzureRmStorageAccountName: 'genai7633865272'
+    backendAzureRmContainerName: 'insights-logs-auditevent'
+    backendAzureRmKey: 'terraform.tfstate'
